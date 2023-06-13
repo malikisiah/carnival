@@ -10,6 +10,7 @@ export default function Home() {
       <div className='hero-content text-center text-neutral-content'>
         <div className='max-w-md'>
           <h1 className='mb-5 text-5xl font-bold'>Project Carnival</h1>
+          <h1> Test</h1>
           <p className='mb-5'></p>
         </div>
       </div>
