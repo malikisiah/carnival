@@ -6,45 +6,69 @@ export default function NavBar() {
   return (
     <>
       <NavHeader />
-      <div className='navbar bg-white flex justify-center sticky top-0 z-40 border-b-2 border-black'>
-        <div className='pr-16'>
+      <div className='navbar bg-white  justify-center sticky top-0 z-40 border-b-2 border-black'>
+        <div className='mr-8'>
           <Image width={225} height={225} alt='' src='/nomadlogotop.jpg' />
         </div>
-        <div className='pr-16'>
-          <Link className='btn btn-ghost normal-case text-xl' href='/'>
+        <div className='mr-12'>
+          <Link
+            className='hover:text-sky-500 px-2 normal-case text-lg font-normal '
+            href='/'
+          >
             {" "}
             Home
           </Link>
-          <Link className='btn btn-ghost normal-case text-xl' href='/'>
+          <Link
+            className='hover:text-sky-500 px-2 normal-case text-lg font-normal'
+            href='/'
+          >
             {" "}
             Mas Camps
           </Link>
-          <Link className='btn btn-ghost normal-case text-xl' href='/'>
+          <Link
+            className='hover:text-sky-500 px-2 normal-case text-lg font-normal'
+            href='/'
+          >
             {" "}
             CG Gear
           </Link>
-          <Link className='btn btn-ghost normal-case text-xl' href='/'>
+          <Link
+            className='hover:text-sky-500 px-2 normal-case text-lg font-normal'
+            href='/'
+          >
             {" "}
             Marketplace
           </Link>
-          <Link className='btn btn-ghost normal-case text-xl' href='/'>
+          <Link
+            className='hover:text-sky-500 px-2 normal-case text-lg font-normal'
+            href='/'
+          >
             {" "}
             Models
           </Link>
-          <Link className='btn btn-ghost normal-case text-xl' href='/'>
+          <Link
+            className='hover:text-sky-500 px-2 normal-case text-lg font-normal'
+            href='/'
+          >
             {" "}
             Artists
           </Link>
-          <Link className='btn btn-ghost normal-case text-xl' href='/'>
+          <Link
+            className='hover:text-sky-500 px-2 normal-case text-lg font-normal'
+            href='/'
+          >
             {" "}
             Events
           </Link>
-          <Link className='btn btn-ghost normal-case text-xl' href='/'>
+          <Link
+            className='hover:text-sky-500 px-2 normal-case text-lg font-normal'
+            href='/'
+          >
             {" "}
             Contact Us
           </Link>
         </div>
-        <div className='flex-none'>
+        <div className=''>
           <div className='dropdown dropdown-end'>
             <label tabIndex={0} className='btn btn-ghost btn-circle'>
               <div className='indicator'>
