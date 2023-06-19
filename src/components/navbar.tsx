@@ -1,12 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
 import NavHeader from "./navHeader";
+import NavFooter from "./navFooter";
 
 export default function NavBar() {
   return (
     <>
       <NavHeader />
-      <div className='navbar bg-white  justify-center sticky top-0 z-40 border-b-2 border-black'>
+      <div className='navbar bg-white  h-28 justify-center sticky top-0 z-40 border-b-2 border-gray-200'>
         <div className='mr-8'>
           <Image width={225} height={225} alt='' src='/nomadlogotop.jpg' />
         </div>
@@ -106,6 +107,7 @@ export default function NavBar() {
           </div>
         </div>
       </div>
+      <NavFooter />
     </>
   );
 }
