@@ -4,6 +4,10 @@ import NavBar from "../components/navbar";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { firebaseAuth } from "../../firebase/config";
 import DealsComponent from "../components/HotDeals";
+import MakeUp from "../components/MakeUp";
+import TopSellersIn from "../components/TopSellersIn";
+import SpecialProducts from "../components/SpecialProducts";
+import Events from "../components/Events";
 
 export default function Home() {
   const [user, loading, error] = useAuthState(firebaseAuth);
@@ -15,6 +19,10 @@ export default function Home() {
         <h1 className="mb-5 text-5xl font-bold text-center">Carnival Guide</h1>
       </div>
       <DealsComponent />
+      <MakeUp />
+      <TopSellersIn />
+      <SpecialProducts />
+      <Events />
       <Footer />
     </div>
   );
