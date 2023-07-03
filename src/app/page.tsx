@@ -6,7 +6,6 @@ import { firebaseAuth } from "../../firebase/config";
 import DealsComponent from "../components/HotDeals";
 import ItemCollection from "@/components/ItemCollection";
 import Banner from "@/components/Banner";
-import Banner2 from "@/components/Banner2";
 import {
   makeUpItems,
   topSellersInItems,
@@ -21,7 +20,8 @@ export default function Home() {
   return (
     <>
       <DealsComponent />
-      <Banner />
+      <Banner img1="/adspc1.jpg" img2="/adspc6.jpg" />
+
       <ItemCollection
         items={makeUpItems}
         heading="MAKE UP"
@@ -50,7 +50,7 @@ export default function Home() {
         heading="EVENTS"
         subHeadings={["FOR WOMEN", "FOR MEN", "FOR KIDS", "ACCESSORIES"]}
       />
-      <Banner2 />
+      <Banner img1="/adspc1.jpg" img2="/adspc2.jpg" />
     </>
   );
 }
