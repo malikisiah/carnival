@@ -5,6 +5,8 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { firebaseAuth } from "../../firebase/config";
 import DealsComponent from "../components/HotDeals";
 import ItemCollection from "@/components/ItemCollection";
+import Banner from "@/components/Banner";
+import Banner2 from "@/components/Banner2";
 import {
   makeUpItems,
   topSellersInItems,
@@ -19,20 +21,21 @@ export default function Home() {
   return (
     <>
       <DealsComponent />
+      <Banner />
       <ItemCollection
         items={makeUpItems}
-        heading='MAKE UP'
+        heading="MAKE UP"
         subHeadings={["WOMEN FASHION", "BAGS", "SHOES", "GLASSES"]}
       />
 
       <ItemCollection
         items={topSellersInItems}
-        heading='TOP SELLERS IN'
+        heading="TOP SELLERS IN"
         subHeadings={["DRESSES", "TOP", "BOTTOM", "JEWELRY", "SKIN CARE"]}
       />
       <ItemCollection
         items={specialProductsItems}
-        heading='SPECIAL PRODUCTS'
+        heading="SPECIAL PRODUCTS"
         subHeadings={[
           "WOMEN FASHION",
           "JACKETS",
@@ -44,9 +47,10 @@ export default function Home() {
       />
       <ItemCollection
         items={eventsItems}
-        heading='EVENTS'
+        heading="EVENTS"
         subHeadings={["FOR WOMEN", "FOR MEN", "FOR KIDS", "ACCESSORIES"]}
       />
+      <Banner2 />
     </>
   );
 }
