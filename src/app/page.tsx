@@ -4,19 +4,20 @@ import Footer from "@/components/Footer";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { firebaseAuth } from "../../firebase/config";
 import DealsComponent from "../components/HotDeals";
-import MakeUp from "../components/MakeUp";
-import TopSellersIn from "../components/TopSellersIn";
-import SpecialProducts from "../components/SpecialProducts";
-import Events from "../components/Events";
-import Hero from "../components/Hero";
+import ItemCollection from "@/components/ItemCollection";
+import {
+  makeUpItems,
+  topSellersInItems,
+  specialProductsItems,
+  eventsItems,
+} from "@/components/Items";
 
 export default function Home() {
   const [user, loading, error] = useAuthState(firebaseAuth);
   console.log("Loading:", loading, "|", "Current user:", user);
 
   return (
-    <div>
-      <Hero />
+    <>
       <DealsComponent />
       <ItemCollection
         items={makeUpItems}
