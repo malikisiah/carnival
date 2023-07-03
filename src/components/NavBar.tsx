@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import NavHeader from "./navHeader";
-import NavFooter from "./navFooter";
+import NavHeader from "./NavHeader";
+import NavFooter from "./NavFooter";
 
 export default function NavBar() {
   return (

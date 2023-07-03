@@ -8,7 +8,7 @@ export default function DealsComponent() {
   };
 
   return (
-    <div style={{ display: "flex" }}>
+    <div className='flex justify-center mt-12'>
       <HotDealsSection />
       <TextLinesSection
         handleTextLineClick={handleTextLineClick}

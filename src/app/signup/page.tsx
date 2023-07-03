@@ -13,18 +13,12 @@ const uiConfig = {
 
 function SignInScreen() {
   return (
-    <div
-      style={{
-        maxWidth: "320px",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
-    >
-      <h1>Temp Login</h1>
-      <p>Please sign-in:</p>
-      <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebaseAuth} />
+    <div className='flex min-h-screen justify-center items-center'>
+      <div className='pb-60'>
+        <h1 className='text-center font-bold'>Temp Login</h1>
+        <p className='text-center font-semibold'>Please sign-in:</p>
+        <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebaseAuth} />
+      </div>
     </div>
   );
 }
