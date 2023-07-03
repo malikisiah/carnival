@@ -1,15 +1,22 @@
-const Banner = ({ img1, img2 }) => {
+import styles from "./Banner.module.css";
+
+type BannerProps = {
+  img1: string;
+  img2: string;
+};
+
+const Banner = ({ img1, img2 }: BannerProps) => {
   return (
     <div className="flex justify-center my-4">
       <div className="flex gap-4">
-        <div className="w-1/2">
-          <a className="box-img" href="">
-            <img alt="banner" src={img1} />
+        <div className={`${styles.shineEffect} w-1/2`}>
+          <a href="">
+            <img className="banner" alt="banner" src={img1} />
           </a>
         </div>
-        <div className="w-1/2">
-          <a className="box-img" href="">
-            <img alt="banner" src={img2} />
+        <div className={`${styles.shineEffect} w-1/2`}>
+          <a href="">
+            <img className="banner" alt="banner" src={img2} />
           </a>
         </div>
       </div>
