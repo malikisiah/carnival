@@ -5,20 +5,18 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { firebaseAuth } from "../../firebase/config";
 import DealsComponent from "../components/HotDeals";
 import MakeUp from "../components/MakeUp";
-import ItemCollection from "@/components/ItemCollection";
-import {
-  makeUpItems,
-  specialProductsItems,
-  topSellersInItems,
-  eventsItems,
-} from "@/components/Items";
+import TopSellersIn from "../components/TopSellersIn";
+import SpecialProducts from "../components/SpecialProducts";
+import Events from "../components/Events";
+import Hero from "../components/Hero";
 
 export default function Home() {
   const [user, loading, error] = useAuthState(firebaseAuth);
   console.log("Loading:", loading, "|", "Current user:", user);
 
   return (
-    <>
+    <div>
+      <Hero />
       <DealsComponent />
       <ItemCollection
         items={makeUpItems}
