@@ -33,6 +33,7 @@ export default function Home() {
         heading="TOP SELLERS IN"
         subHeadings={["DRESSES", "TOP", "BOTTOM", "JEWELRY", "SKIN CARE"]}
       />
+      <Banner img1="/adspc3.jpg" img2="/adspc4.jpg" />
       <ItemCollection
         items={specialProductsItems}
         heading="SPECIAL PRODUCTS"
