@@ -1,46 +1,35 @@
-import React, { useState } from "react";
-import "tailwindcss/tailwind.css";
-
 const BlogCarousel = () => {
-  const [carouselPosition, setCarouselPosition] = useState(0);
-
-  const nextImage = () => {
-    // If we're not at the end of the carousel, move to the next image
-    if (carouselPosition < 3) {
-      setCarouselPosition(carouselPosition + 1);
-    }
-  };
-
-  const prevImage = () => {
-    // If we're not at the start of the carousel, move to the previous image
-    if (carouselPosition > 0) {
-      setCarouselPosition(carouselPosition - 1);
-    }
-  };
-
   return (
-    <div className="flex overflow-hidden w-full justify-center">
-      <button onClick={prevImage} className="p-4 bg-gray-200">
-        Prev
-      </button>
-      <div
-        className="flex transition-transform duration-200 ease-in-out"
-        style={{ transform: `translateX(-${carouselPosition * 270}px)` }}
-      >
-        {/* Place images here as before, but now inside this moving div. */}
-        <div className="carousel-item w-270 h-257 border-2 border-gray-300 rounded-none">
-          <img
-            src="/adspc2.jpg"
-            alt="Drink"
-            className="object-cover w-full h-full"
-          />
+    <div className="flex justify-center">
+      <div className="blog-carousel bg-red-700 w-9/12 h-410">
+        <div className="flex justify-between items-center p-3 mb-5">
+          <span className="block-title bg-green-300 px-4 py-2">
+            FROM THE BLOG
+          </span>
+          <div className="flex gap-3">
+            <button className="bg-blue-500 text-white px-3 py-1 rounded">Prev</button>
+            <button className="bg-blue-500 text-white px-3 py-1 rounded">Next</button>
+          </div>
         </div>
-
-        {/* ... Repeat for other images */}
+        <div className="blog-carousel-content bg-blue-300 w-auto h-auto">
+          <div className="px-4 py-3 Blog-item">
+            <div className="flex gap-10 blog-photo">
+              <a href="#">
+                <img src="https://via.placeholder.com/200x200" alt="blog1" />
+              </a>
+              <a href="#">
+                <img src="https://via.placeholder.com/200x200" alt="blog2" />
+              </a>
+              <a href="#">
+                <img src="https://via.placeholder.com/200x200" alt="blog3" />
+              </a>
+              <a href="#">
+                <img src="https://via.placeholder.com/200x200" alt="blog4" />
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
-      <button onClick={nextImage} className="p-4 bg-gray-200">
-        Next
-      </button>
     </div>
   );
 };
