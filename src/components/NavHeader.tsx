@@ -1,35 +1,30 @@
+"use client";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { firebaseAuth } from "../../firebase/config";
 import Link from "next/link";
-export default function NavHeader() {
+
+export default function Navigation() {
+  const [signedIn] = useAuthState(firebaseAuth);
+
+  const handleSignOut = () => {
+    firebaseAuth.signOut();
+  };
+
   return (
     <>
-      <div className='flex font-light items-center align-middle justify-center h-8 text-sm '>
+      <div className="flex font-light items-center align-middle justify-center h-8 text-sm ">
         <p> Welcome to Carnival Guide | Call Us: +09 957774334</p>
-        <div className='ml-96'>
-          <div className='dropdown dropdown-hover z-50'>
-            <label tabIndex={0} className='hover:text-sky-500 pr-3 '>
-              <Link href='/'>
-                {" "}
-                My Account{" "}
-                <svg
-                  xmlns='http://www.w3.org/2000/svg'
-                  fill='none'
-                  viewBox='0 0 24 24'
-                  strokeWidth={1.5}
-                  stroke='currentColor'
-                  className='w-3 h-3 ml-1 inline'
-                >
-                  <path
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                    d='M19.5 8.25l-7.5 7.5-7.5-7.5'
-                  />
-                </svg>
-              </Link>
-            </label>
-
-            <ul
+        <div className="ml-96">
+          <div className="dropdown dropdown-hover z-50">
+            {signedIn ? (
+              <>
+                
+                <div className="inline-flex hover:text-sky-500 px-3">
+                  <Link href="/myaccount">My Account</Link>
+                </div>
+                <ul
               tabIndex={0}
-              className='dropdown-content menu p-2 shadow bg-white box w-52'
+              className="dropdown-content menu p-2 shadow bg-white box w-52"
             >
               <li>
                 <a>Wishlist</a>
@@ -44,22 +39,35 @@ export default function NavHeader() {
                 <a>Checkout</a>
               </li>
               <li>
-                <a>Login/Register</a>
+                  <Link href="/myaccount">My Account</Link>
               </li>
             </ul>
+              </>
+            ) : (
+              <label tabIndex={0} className="hover:text-sky-500 pr-3 ">
+                <Link href="/signup">Login/Register</Link>
+              </label>
+            )}
           </div>
           |
-          <div className='inline-flex hover:text-sky-500 px-3'>
-            <Link href='/'> Buyer Protection</Link>
+          <div className="inline-flex hover:text-sky-500 px-3">
+            <Link href="/">Buyer Protection</Link>
           </div>
           |
-          <div className='inline-flex hover:text-sky-500 px-3'>
-            <Link href='/'> Services</Link>
+          <div className="inline-flex hover:text-sky-500 px-3">
+            <Link href="/">Services</Link>
           </div>
           |
-          <div className='inline-flex hover:text-sky-500 px-3'>
-            <Link href='/'> Support</Link>
+          <div className="inline-flex hover:text-sky-500 px-3">
+            <Link href="/">Support</Link>
           </div>
+          
+          {signedIn && (
+            <div onClick={handleSignOut} className="inline-flex hover:text-sky-500 px-3 cursor-pointer">
+              |
+              Sign Out
+              </div>
+          )}
         </div>
       </div>
     </>
