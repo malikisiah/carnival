@@ -9,17 +9,17 @@ type CollectionProps = {
 };
 export default function ItemCollection(props: CollectionProps) {
   return (
-    <div className='w-auto h-auto mt-5 flex justify-center'>
-      <div id='block-container' className='flex flex-col mx-auto'>
+    <div className="w-auto h-auto mt-5 flex justify-center">
+      <div id="block-container" className="flex flex-col mx-auto">
         <div
-          id='block-header'
-          className='w-1114 h-40 mb-5 flex justify-between'
+          id="block-header"
+          className="w-auto h-auto mb-5 flex justify-between"
         >
-          <div className='p-2'>{props.heading}</div>
-          <div className='flex p-2 space-x-2'>
+          <div className="p-2">{props.heading}</div>
+          <div className="flex p-2 space-x-2">
             <Link
-              href='#'
-              className='border-r border-gray-900 pr-2 link link-hover'
+              href="#"
+              className="border-r border-gray-900 pr-2 link link-hover"
             >
               {" "}
               ALL{" "}
@@ -27,7 +27,7 @@ export default function ItemCollection(props: CollectionProps) {
             {props.subHeadings.map((item, idx) => {
               return (
                 <Link
-                  href='#'
+                  href="#"
                   key={idx}
                   className={`pr-2 link link-hover ${
                     idx === props.subHeadings.length - 1
@@ -41,16 +41,16 @@ export default function ItemCollection(props: CollectionProps) {
             })}
           </div>
         </div>
-        <div className='flex space-x-4'>
-          <div id='block-banner' className='w-226 h-348'>
+        <div className="flex space-x-4">
+          <div id="block-banner" className="w-226 h-348">
             <Image
-              src='https://via.placeholder.com/226x348'
-              alt='banner'
+              src="https://via.placeholder.com/226x348"
+              alt="banner"
               width={350}
               height={350}
             />
           </div>
-          <div id='block-tabs' className='w-872 h-348 space-x-4 flex'>
+          <div id="block-tabs" className="w-872 h-348 space-x-4 flex">
             {props.items.map((item, idx) => {
               return (
                 <ItemCard
