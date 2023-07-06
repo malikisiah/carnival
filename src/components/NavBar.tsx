@@ -28,7 +28,7 @@ export default function NavBar() {
           </Link>
           <Link
             className='hover:text-sky-500 px-2 normal-case text-lg font-normal'
-            href='/'
+            href='/CGgear' //this is the link to the CG Gear page
           >
             {" "}
             CG Gear
