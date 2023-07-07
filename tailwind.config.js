@@ -1,5 +1,4 @@
 const daisyui = require("daisyui");
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -49,5 +48,5 @@ module.exports = {
       "winter",
     ],
   },
-  plugins: [daisyui],
+  plugins: [daisyui]
 };
