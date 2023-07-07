@@ -14,6 +14,8 @@ import {
   specialProductsItems,
   eventsItems,
 } from "@/components/Items";
+import HomepageBanner from "@/components/homepageBanner";
+import Carousel from "@/components/carousel";
 
 export default function Home() {
   const [user, loading, error] = useAuthState(firebaseAuth);
@@ -21,6 +23,8 @@ export default function Home() {
 
   return (
     <>
+      <Carousel />
+      <HomepageBanner />
       <DealsComponent />
       <Banner img1="/adspc1.jpg" img2="/adspc6.jpg" />
 
