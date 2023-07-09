@@ -24,7 +24,18 @@ export default function DealsComponent() {
   );
 }
 
-function DealsSection({ deals }) {
+type Deal = {
+  image: string;
+  title: string;
+  newPrice: string;
+  oldPrice: string;
+};
+
+type DealsSectionProps = {
+  deals: Deal[];
+};
+
+function DealsSection({ deals }: DealsSectionProps) {
     return (
       <div
         style={{
@@ -38,7 +49,7 @@ function DealsSection({ deals }) {
           alignItems: "center",
         }}
       >
-        {deals.map((deal, index) => (
+        {deals.map((deal: Deal, index : number) => (
           <div key={index}>
             <img
               src={deal.image}
