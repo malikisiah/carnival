@@ -3,7 +3,7 @@ import React, { useState } from "react";
 export default function DealsComponent() {
   const [currentSection, setCurrentSection] = useState(40);
 
-  const handleTextLineClick = (section) => {
+  const handleTextLineClick = (section : React.SetStateAction<number>) => {
     setCurrentSection(section);
   };
 
