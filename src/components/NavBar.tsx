@@ -21,7 +21,7 @@ export default function NavBar() {
           </Link>
           <Link
             className='hover:text-sky-500 px-2 normal-case text-lg font-normal'
-            href='/'
+            href='/mascamps'
           >
             {" "}
             Mas Camps
@@ -35,35 +35,35 @@ export default function NavBar() {
           </Link>
           <Link
             className='hover:text-sky-500 px-2 normal-case text-lg font-normal'
-            href='/'
+            href='/marketplace'
           >
             {" "}
             Marketplace
           </Link>
           <Link
             className='hover:text-sky-500 px-2 normal-case text-lg font-normal'
-            href='/'
+            href='/models'
           >
             {" "}
             Models
           </Link>
           <Link
             className='hover:text-sky-500 px-2 normal-case text-lg font-normal'
-            href='/'
+            href='/artistes'
           >
             {" "}
             Artists
           </Link>
           <Link
             className='hover:text-sky-500 px-2 normal-case text-lg font-normal'
-            href='/'
+            href='/events'
           >
             {" "}
             Events
           </Link>
           <Link
             className='hover:text-sky-500 px-2 normal-case text-lg font-normal'
-            href='/'
+            href='/contact-us'
           >
             {" "}
             Contact Us
