@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import NavHeader from "./navHeader";
-import NavFooter from "./navFooter";
+import NavHeader from "./NavHeader";
+import NavFooter from "./NavFooter";
 
 export default function NavBar() {
   return (
@@ -21,49 +21,49 @@ export default function NavBar() {
           </Link>
           <Link
             className='hover:text-sky-500 px-2 normal-case text-lg font-normal'
-            href='/'
+            href='/mascamps'
           >
             {" "}
             Mas Camps
           </Link>
           <Link
             className='hover:text-sky-500 px-2 normal-case text-lg font-normal'
-            href='/'
+            href='/CGgear' //this is the link to the CG Gear page
           >
             {" "}
             CG Gear
           </Link>
           <Link
             className='hover:text-sky-500 px-2 normal-case text-lg font-normal'
-            href='/'
+            href='/marketplace'
           >
             {" "}
             Marketplace
           </Link>
           <Link
             className='hover:text-sky-500 px-2 normal-case text-lg font-normal'
-            href='/'
+            href='/models'
           >
             {" "}
             Models
           </Link>
           <Link
             className='hover:text-sky-500 px-2 normal-case text-lg font-normal'
-            href='/'
+            href='/artistes'
           >
             {" "}
             Artists
           </Link>
           <Link
             className='hover:text-sky-500 px-2 normal-case text-lg font-normal'
-            href='/'
+            href='/events'
           >
             {" "}
             Events
           </Link>
           <Link
             className='hover:text-sky-500 px-2 normal-case text-lg font-normal'
-            href='/'
+            href='/contact-us'
           >
             {" "}
             Contact Us
