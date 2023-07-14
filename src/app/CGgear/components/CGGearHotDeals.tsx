@@ -5,7 +5,7 @@ function CGGearHotdeals() {
     <div
       style={{
         width: '300px',
-        height: '2000px',
+        height: '500px',
         //backgroundColor: 'yellow',
       }}
     >
