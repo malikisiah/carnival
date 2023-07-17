@@ -39,10 +39,10 @@ export default function Carousel() {
                 className='w-full h-full bg-center bg-cover duration-500'
             >
                 <div className="absolute inset-x-[15%] bottom-14 hidden py-10 text-right text-white md:block">
-                    <h5 className="text-[1rem]">FREE SHIPPING AVAILABLE!</h5>
+                    <p>FREE SHIPPING AVAILABLE! </p>
                     <h5 className="font-bold text-[2rem]">TOURS AND ACTIVITIES</h5>
                     <h5 className="text-[1.8rem]">YOUR COMFORT</h5>
-                    <h5 className="font-light text-[0.8rem]">START FROM</h5>
+                    <p>START FROM </p>
                     <h5 className="font-bold text-[1.3rem] text-red-600">$100.</h5>
                     <button className="font-bold px-[1rem] bg-[#fff] text-[15px] p-2 text-black">
                         SHOP NOW

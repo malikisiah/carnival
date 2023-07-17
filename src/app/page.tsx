@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { firebaseAuth } from "../../firebase/config";
 import DealsComponent from "../components/HotDeals";
+import DealsComponentOld from "@/components/HotDealsOldRemove";
 import ItemCollection from "@/components/ItemCollection";
 import Banner from "@/components/Banner";
 import BlogCarousel from "@/components/BlogCarousel";
