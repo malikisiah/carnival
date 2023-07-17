@@ -1,11 +1,12 @@
-import React from 'react';
+"use client";
+import React, { useState } from "react";
 
-function CGGearHotdeals() {
+export default function CGGearHotdeals() {
   return (
     <div
       style={{
         width: '300px',
-        height: '500px',
+        height: '100%',
         //backgroundColor: 'yellow',
       }}
     >
@@ -37,22 +38,108 @@ function Header() {
   );
 }
 
-
 function BlockOne() {
+  const [currentItem, setCurrentItem] = useState(0);
+  const { image, title, newPrice, oldPrice } = items[currentItem];
+
+  const nextItem = () => {
+    setCurrentItem((prevItem) => (prevItem + 1) % items.length);
+  };
+
+  const prevItem = () => {
+    setCurrentItem((prevItem) => (prevItem - 1 + items.length) % items.length);
+  };
+
   return (
     <div
       style={{
-        width: '268px',
-        height: '400px',
-        border: '1px solid #EEEEEE',
-        marginLeft: '15px',
+        width: "268px",
+        height: "400px",
+        border: "1px solid #EEEEEE",
+        marginLeft: "15px",
       }}
     >
       <Timer />
+
+      <div style={{ position: "relative", textAlign: "center" }}>
+        <img src={image} alt={title} style={{ marginLeft: "15px" }} />
+        <button
+          onClick={prevItem}
+          style={{
+            position: "absolute",
+            top: "50%",
+            left: "15px",
+            transform: "translateY(-50%)",
+          }}
+        >
+          {"<"}
+        </button>
+        <button
+          onClick={nextItem}
+          style={{
+            position: "absolute",
+            top: "50%",
+            right: "15px",
+            transform: "translateY(-50%)",
+          }}
+        >
+          {">"}
+        </button>
+      </div>
+
+      <p
+        style={{
+          textAlign: "center",
+          fontFamily: "Oswald, sans-serif",
+          fontSize: "14px",
+          fontWeight: "bold",
+          color: "#333",
+        }}
+      >
+        {title}
+      </p>
+
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <p style={{ color: "red", fontWeight: "bold" }}>{newPrice}</p>
+        <p style={{ marginLeft: "5px", textDecoration: "line-through" }}>{oldPrice}</p>
+      </div>
+
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <button style={{ backgroundColor: "#11A8AB", color: "white", width: "120px", height: "34px", marginRight: "5px" }}>
+          Add to Cart
+        </button>
+        <button style={{ backgroundColor: "#EEEEEE", width: "40px", height: "34px", marginRight: "5px" }}>
+          {"\u2764"}
+        </button>
+        <button style={{ backgroundColor: "#EEEEEE", width: "40px", height: "34px" }}>
+          {"\u27F3"}
+        </button>
+      </div>
+
       {/* Other content in BlockOne */}
     </div>
   );
 }
+
+
+const items = [
+  {
+    id: 1,
+    image: "HotDealsAssets/GCDealAsset.jpg",
+    title: 'State 1',
+    newPrice: "$29.99",
+    oldPrice: "$39.99",
+  },
+  {
+    id: 2,
+    image: 'HotDealsAssets/GCDealAsset.jpg',
+    title: 'State 2',
+    newPrice: "$29.99",
+    oldPrice: "$59.99",
+  },
+  // Add more items as needed
+];
+
 
 function Timer() {
   return (
@@ -99,5 +186,3 @@ function TimerBox() {
   );
 }
 
-
-export default CGGearHotdeals;
