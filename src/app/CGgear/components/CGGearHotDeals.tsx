@@ -1,12 +1,13 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { CartContext } from "@/context/CartProvider";
 
 export default function CGGearHotdeals() {
   return (
     <div
       style={{
-        width: '300px',
-        height: '100%',
+        width: "300px",
+        height: "100%",
         //backgroundColor: 'yellow',
       }}
     >
@@ -21,24 +22,30 @@ function Header() {
   return (
     <div
       style={{
-        width: '268px',
-        height: '50px',
-        backgroundColor: '#EEEEEE',
-        marginLeft: '15px',
-        display: 'flex',
-        alignItems: 'center',
-        fontFamily: 'Oswald, sans-serif',
-        fontSize: '12px',
-        fontWeight: 'bold',
-        color: '#333',
+        width: "268px",
+        height: "50px",
+        backgroundColor: "#EEEEEE",
+        marginLeft: "15px",
+        display: "flex",
+        alignItems: "center",
+        fontFamily: "Oswald, sans-serif",
+        fontSize: "12px",
+        fontWeight: "bold",
+        color: "#333",
       }}
     >
-      <span style={{ marginLeft: '23px' }}>HOT DEAL OF THIS WEEK</span>
+      <span style={{ marginLeft: "23px" }}>HOT DEAL OF THIS WEEK</span>
     </div>
   );
 }
 
 function BlockOne() {
+  const context = useContext(CartContext);
+  if (!context) {
+    throw new Error("Error");
+  }
+
+  const { addToCart } = context;
   const [currentItem, setCurrentItem] = useState(0);
   const { image, title, newPrice, oldPrice } = items[currentItem];
 
@@ -101,17 +108,37 @@ function BlockOne() {
 
       <div style={{ display: "flex", justifyContent: "center" }}>
         <p style={{ color: "red", fontWeight: "bold" }}>{newPrice}</p>
-        <p style={{ marginLeft: "5px", textDecoration: "line-through" }}>{oldPrice}</p>
+        <p style={{ marginLeft: "5px", textDecoration: "line-through" }}>
+          {oldPrice}
+        </p>
       </div>
 
       <div style={{ display: "flex", justifyContent: "center" }}>
-        <button style={{ backgroundColor: "#11A8AB", color: "white", width: "120px", height: "34px", marginRight: "5px" }}>
+        <button
+          onClick={() => addToCart({ id: "123", name: "item1" })}
+          style={{
+            backgroundColor: "#11A8AB",
+            color: "white",
+            width: "120px",
+            height: "34px",
+            marginRight: "5px",
+          }}
+        >
           Add to Cart
         </button>
-        <button style={{ backgroundColor: "#EEEEEE", width: "40px", height: "34px", marginRight: "5px" }}>
+        <button
+          style={{
+            backgroundColor: "#EEEEEE",
+            width: "40px",
+            height: "34px",
+            marginRight: "5px",
+          }}
+        >
           {"\u2764"}
         </button>
-        <button style={{ backgroundColor: "#EEEEEE", width: "40px", height: "34px" }}>
+        <button
+          style={{ backgroundColor: "#EEEEEE", width: "40px", height: "34px" }}
+        >
           {"\u27F3"}
         </button>
       </div>
@@ -121,36 +148,34 @@ function BlockOne() {
   );
 }
 
-
 const items = [
   {
     id: 1,
     image: "HotDealsAssets/GCDealAsset.jpg",
-    title: 'State 1',
+    title: "State 1",
     newPrice: "$29.99",
     oldPrice: "$39.99",
   },
   {
     id: 2,
-    image: 'HotDealsAssets/GCDealAsset.jpg',
-    title: 'State 2',
+    image: "HotDealsAssets/GCDealAsset.jpg",
+    title: "State 2",
     newPrice: "$29.99",
     oldPrice: "$59.99",
   },
   // Add more items as needed
 ];
 
-
 function Timer() {
   return (
     <div
       style={{
-        width: '268px',
-        height: '66px',
-        paddingTop: '23px',
+        width: "268px",
+        height: "66px",
+        paddingTop: "23px",
         //backgroundColor: '#EEEEEE',
-        display: 'flex',
-        justifyContent: 'space-evenly',
+        display: "flex",
+        justifyContent: "space-evenly",
       }}
     >
       <TimerBox />
@@ -164,25 +189,24 @@ function Timer() {
 
 function TimerBox() {
   return (
-    <div style={{ }}>
+    <div style={{}}>
       <div
         style={{
-          width: '42px',
-          height: '34px',
-          backgroundColor: 'red',
-          color: 'white',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
+          width: "42px",
+          height: "34px",
+          backgroundColor: "red",
+          color: "white",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
         }}
       >
-        <span style={{ fontSize: '16px' }}>00</span>
+        <span style={{ fontSize: "16px" }}>00</span>
       </div>
-      <div style={{ textAlign: 'center' }}>
-        <span style={{ fontSize: '12px', color: 'black' }}>Days</span>
+      <div style={{ textAlign: "center" }}>
+        <span style={{ fontSize: "12px", color: "black" }}>Days</span>
       </div>
     </div>
   );
 }
-
