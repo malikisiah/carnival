@@ -6,11 +6,14 @@ const CartContext = createContext<CartContextType | undefined>(undefined);
 type CartItem = {
   id: string;
   name: string;
+  price: number;
+  qty: number;
 };
 
-export type CartContextType = {
+type CartContextType = {
   cartItems: CartItem[];
   addToCart: (item: CartItem) => void;
+  removeFromCart: (idx: number) => void;
 };
 
 const CartProvider = ({ children }: any) => {
@@ -29,8 +32,15 @@ const CartProvider = ({ children }: any) => {
     localStorage.setItem("cartItems", JSON.stringify(updatedCartItems));
   };
 
+  const removeFromCart = (index: number) => {
+    const updatedCartItems = [...cartItems];
+    updatedCartItems.splice(index, 1);
+    setCartItems(updatedCartItems);
+    localStorage.setItem("cartItems", JSON.stringify(updatedCartItems));
+  };
+
   return (
-    <CartContext.Provider value={{ cartItems, addToCart }}>
+    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart }}>
       {children}
     </CartContext.Provider>
   );

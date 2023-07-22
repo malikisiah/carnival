@@ -115,7 +115,14 @@ function BlockOne() {
 
       <div style={{ display: "flex", justifyContent: "center" }}>
         <button
-          onClick={() => addToCart({ id: "123", name: "item1" })}
+          onClick={() =>
+            addToCart({
+              id: "price_1NWO7tE6rPXTXIhKVgJho8O9",
+              name: "Test Item",
+              price: 29.99,
+              qty: 1,
+            })
+          }
           style={{
             backgroundColor: "#11A8AB",
             color: "white",
