@@ -6,7 +6,9 @@ export default function Page() {
   return (
     <>
       <CGHeader />
-      <CGGearHotDeals />
+      <div className="flex items-center justify-center pt-8">
+        <CGGearHotDeals />
+      </div>
       <div className="flex min-h-screen justify-center items-center bg-white">
         <>
           <Categories

@@ -10,6 +10,7 @@ export default function CGGearHotdeals() {
         height: "100%",
         //backgroundColor: 'yellow',
       }}
+      className=""
     >
       <Header />
       <BlockOne />
