@@ -1,6 +1,8 @@
-import Categories from "@/components/Categories";
+"use client";
+import Categories from "@/app/CGgear/components/Categories";
 import CGGearHotDeals from "./components/CGGearHotDeals";
 import CGHeader from "./CGHeader";
+import BlogPosts from "./components/BlogPosts";
 
 export default function Page() {
   return (
@@ -9,7 +11,7 @@ export default function Page() {
       <div className="flex items-center justify-center pt-8">
         <CGGearHotDeals />
       </div>
-      <div className="flex min-h-screen justify-center items-center bg-white">
+      <div className="flex min-h-screen justify-center items-center">
         <>
           <Categories
             subHeading="Women"
@@ -25,6 +27,7 @@ export default function Page() {
           />
         </>
       </div>
+      <BlogPosts/>
     </>
   );
 }

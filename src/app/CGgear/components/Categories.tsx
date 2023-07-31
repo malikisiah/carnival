@@ -1,11 +1,11 @@
 import Image from "next/image";
 
-type CollectionProps = {
+type CategoriesProps = {
     subHeading: string;
     image: string;
   };
 
-  export default function Categories(props: CollectionProps) {
+  export default function Categories(props: CategoriesProps) { 
     return (
             <div className="grid grid-rows-3 grid-flow-col gap-2 mr-6 border-2 border-solid border-gray-100 bg-white">
 
@@ -39,6 +39,6 @@ type CollectionProps = {
                     height={239} 
                 />
             </div>
-    </div> 
+            </div>
     );
 }
