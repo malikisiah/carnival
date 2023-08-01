@@ -7,7 +7,7 @@ type CategoriesProps = {
 
   export default function Categories(props: CategoriesProps) { 
     return (
-            <div className="grid grid-rows-3 grid-flow-col gap-2 mr-6 border-2 border-solid border-gray-100 bg-white">
+            <div className="grid grid-rows-3 grid-flow-col border-2 border-solid border-gray-100 bg-white">
 
             <div className="row-span-3 my-2 px-6 pt-3"> 
                 <ul className="text-[0.9rem] text-gray-500 marker:text-gray-500 list-disc list-inside">
@@ -32,7 +32,7 @@ type CategoriesProps = {
                 <div className="uppercase font-bold text-[1.9rem] text-[#F7450F]">{props.subHeading}</div>
             </div>
 
-            <div className="row-span-2 col-span-2 -mt-7">
+            <div className="row-span-2 col-span-2 pl-6 -mt-6">
                 <Image src={props.image}
                     alt=''
                     width={238}

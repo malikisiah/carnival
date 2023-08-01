@@ -11,8 +11,8 @@ export default function Page() {
       <div className="flex items-center justify-center pt-8">
         <CGGearHotDeals />
       </div>
-      <div className="flex min-h-screen justify-center items-center">
-        <>
+
+      <div className="max-w-[90rem] h-auto w-full m-auto flex justify-evenly items-center space-x-8 py-4">
           <Categories
             subHeading="Women"
             image="https://via.placeholder.com/238x239"
@@ -25,8 +25,8 @@ export default function Page() {
             subHeading="Accessory"
             image="https://via.placeholder.com/238x239"
           />
-        </>
       </div>
+
       <BlogPosts/>
     </>
   );
