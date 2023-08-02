@@ -1,7 +1,9 @@
 "use client";
-import Categories from "@/app/CGgear/components/Categories";
+
 import CGGearHotDeals from "./components/CGGearHotDeals";
 import CGHeader from "./CGHeader";
+import Banner from "./components/Banner";
+import Categories from "@/app/CGgear/components/Categories";
 import BlogPosts from "./components/BlogPosts";
 
 export default function Page() {
@@ -12,7 +14,9 @@ export default function Page() {
         <CGGearHotDeals />
       </div>
 
-      <div className="max-w-[90rem] h-auto w-full m-auto flex justify-evenly items-center space-x-8 py-4">
+      <Banner />
+
+      <div className="max-w-[73.5rem] h-auto w-full m-auto flex justify-evenly items-center space-x-6 py-4">
           <Categories
             subHeading="Women"
             image="https://via.placeholder.com/238x239"

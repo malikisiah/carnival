@@ -44,7 +44,7 @@ const allBlogs = [
     };
 
     return (
-        <div className="max-w-[90rem] h-auto w-full m-auto bg-white">
+        <div className="max-w-[73.5rem] h-auto w-full m-auto bg-white">
         <div className="flex justify-center bg-white">
             <div className="w-auto h-auto">
                 {/* Recent Blog Posts */}    
@@ -57,7 +57,7 @@ const allBlogs = [
                 </div>
                 
                 {/* PREVIOUS Button */}  
-                <div className="flex flex-row-reverse justify-between items-center pb-3">
+                <div className="flex flex-row-reverse justify-between items-center pb-2">
                     <div className="flex gap-3">
                         <button
                             className="bg-white text-gray-500 border-2 border-solid border-gray-100 px-3 py-1 rounded"
@@ -91,7 +91,7 @@ const allBlogs = [
         
         {/* Image block 142x62 */} 
         <div>
-            <div className="flex items-stretch gap-20 pt-8 pb-8">
+            <div className="flex items-stretch gap-8 pt-8 pb-8">
                 <a href="#">
                     <Image src="https://via.placeholder.com/142x62"
                         alt='1'

@@ -17,20 +17,20 @@ const BlogPostsDetails = ({ date, name, image }: BlogPostsDetailsProps) => {
                     />
                 </a>
             </div>
-            <div className="flex flex-col justify-evenly px-8">
+            <div className="w-1/2 flex flex-col justify-evenly px-8">
                 <div className="h-1/8">
-                    <a href="#" className=" px-[1rem] bg-[#F7450F] text-[15px] text-center p-1 text-[#ffffff]">
+                    <a href="#" className="px-[1rem] bg-[#F7450F] text-[15px] text-center p-1 text-[#ffffff]">
                         {date}
                     </a>
                 </div>
                 <div className="h-1/2">
-                    <a href="#" className=" uppercase text-[1.9rem] hover:text-red-500 leading-none">
+                    <a href="#" className="uppercase text-[1.9rem] hover:text-red-500 leading-none">
                         {name}
                     </a>
                 </div>
                 <div className="h-1/7">
-                    <svg viewBox="0 0 70 1" xmlns="http://www.w3.org/2000/svg">
-                        <line x1="0" x2="5" stroke="gray" />
+                    <svg viewBox="0 0 50 1" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="0" x2="6" stroke="gray" />
                     </svg>
                     <a href="#"><p className="uppercase text-[0.9rem] text-gray-500 hover:text-red-500">Read More</p></a>
                 </div>
