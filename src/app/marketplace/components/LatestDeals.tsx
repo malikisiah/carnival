@@ -112,7 +112,7 @@ const allBlogs = [
               {/* PREVIOUS Button */}  
                 <div className="flex gap-1 pl-6">
                   <button
-                    className="bg-white text-white border-2 border-solid border-gray-100 bg-gray-400 hover:bg-orange-500 px-3 rounded"
+                    className="text-white border-2 border-solid border-gray-100 bg-gray-400 hover:bg-orange-500 px-3 rounded"
                       onClick={goPrev}
                         >
                         &#8249;
@@ -120,7 +120,7 @@ const allBlogs = [
 
                 {/* NEXT Button */} 
                   <button
-                    className="bg-white text-white border-2 border-solid border-gray-100 bg-gray-400 hover:bg-orange-500 px-3 rounded"
+                    className="text-white border-2 border-solid border-gray-100 bg-gray-400 hover:bg-orange-500 px-3 rounded"
                       onClick={goNext}
                         >
                         &#8250;
