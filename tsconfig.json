@@ -29,6 +29,6 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "src/app/signup/page.js"
-  ],
+, "scripts/populateFirestore.js"  ],
   "exclude": ["node_modules"]
 }
