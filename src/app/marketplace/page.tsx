@@ -1,4 +1,5 @@
 import ShopComponent from "./ShopComponent";
+import LatestDeals from "./components/LatestDeals";
 import { getFirestore, collection, getDocs } from "firebase/firestore";
 import { firebaseApp } from "../../../firebase/config";
 
@@ -21,6 +22,7 @@ export default async function Page() {
   return (
     <div className="flex min-h-screen justify-center items-center">
       <ShopComponent header="HAIR" items={items} />
+      <LatestDeals/>
     </div>
   );
 }
