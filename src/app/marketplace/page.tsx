@@ -20,9 +20,9 @@ export default async function Page() {
   getData();
 
   return (
-    <div className="flex min-h-screen justify-center items-center">
+    <>
       <ShopComponent header="HAIR" items={items} />
-      <LatestDeals/>
-    </div>
+      <LatestDeals />
+    </>
   );
 }
