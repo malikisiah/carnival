@@ -1,4 +1,3 @@
-import ShopComponent from "./ShopComponent";
 import LatestDeals from "./components/LatestDeals";
 import {
   getFirestore,
@@ -8,14 +7,14 @@ import {
   query,
 } from "firebase/firestore";
 import { firebaseApp } from "../../../firebase/config";
-import Example from "./FloorProducts";
+
 import FloorProducts from "./FloorProducts";
 
-async function getData() {
+async function getData(collectionName: string) {
   const db = getFirestore(firebaseApp);
   let res: ShopItem[] = [];
 
-  const q = query(collection(db, "Hair_Items"), orderBy("name"));
+  const q = query(collection(db, collectionName), orderBy("name"));
   const querySnapshot = await getDocs(q);
   querySnapshot.forEach((doc) => res.push(doc.data() as ShopItem));
 
@@ -23,13 +22,17 @@ async function getData() {
 }
 
 export default async function Page() {
-  const items = await getData();
+  const hairItems = await getData("Hair_Items");
+  const nailItems = await getData("Nail_Items");
 
   return (
     <>
-      <FloorProducts />
-      {/* <ShopComponent header="HAIR" items={items} /> */}
-      <LatestDeals />
+      <div className="bg-white">
+        <LatestDeals />
+        <FloorProducts header="HAIR" items={hairItems} theme="#ff4601" />
+        <FloorProducts header="NAILS" items={nailItems} theme="#00ae31" />
+        {/* TODO: ADD floor products for make-up, eyelashes, and accessories */}
+      </div>
     </>
   );
 }

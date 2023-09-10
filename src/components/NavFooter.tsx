@@ -1,6 +1,6 @@
 export default function NavFooter() {
   return (
-    <div className="bg-white flex items-center justify-center h-12 sticky top-28">
+    <div className="bg-white flex items-center justify-center h-12 sticky top-28 z-30">
       {" "}
       <div className="join">
         <div className="bg-[#ff4601] rounded-none inline-flex items-center justify-start text-white font-bold w-72 text-sm pl-6">

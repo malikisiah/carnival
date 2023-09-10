@@ -118,7 +118,7 @@ function BlockOne() {
         <button
           onClick={() =>
             addToCart({
-              id: "price_1NWO7tE6rPXTXIhKVgJho8O9",
+              stripe_id: "price_1NWO7tE6rPXTXIhKVgJho8O9",
               name: "Test Item",
               price: 29.99,
               qty: 1,
