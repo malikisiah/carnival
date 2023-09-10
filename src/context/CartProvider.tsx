@@ -3,18 +3,6 @@ import React, { createContext, useState, useEffect } from "react";
 
 // Create the CartContext with a default value
 const CartContext = createContext<CartContextType | undefined>(undefined);
-type CartItem = {
-  id: string;
-  name: string;
-  price: number;
-  qty: number;
-};
-
-type CartContextType = {
-  cartItems: CartItem[];
-  addToCart: (item: CartItem) => void;
-  removeFromCart: (idx: number) => void;
-};
 
 const CartProvider = ({ children }: any) => {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);

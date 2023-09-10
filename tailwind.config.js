@@ -61,5 +61,9 @@ module.exports = {
       "winter",
     ],
   },
-  plugins: [daisyui, require('@tailwindcss/forms')], 
+  plugins: [
+    daisyui,
+    require("@tailwindcss/forms"),
+    require("@tailwindcss/aspect-ratio"),
+  ],
 };

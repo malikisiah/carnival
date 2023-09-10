@@ -126,7 +126,7 @@ export default function Checkout() {
                   <div className="flex justify-end"></div>
                   <div className="flex justify-end">
                     <button
-                      onClick={() => checkout(cartItems[0].id)}
+                      onClick={() => checkout(cartItems[0].stripe_id)}
                       className="block rounded bg-gray-700 px-5 py-3 text-sm text-gray-100 transition hover:bg-gray-600"
                     >
                       Checkout

@@ -119,8 +119,8 @@ export default function NavBar() {
                     return total + item.price;
                   }, 0)}
                 </span>
-                <div className="card-actions">
-                  <Link href="/Cart" className="btn btn-primary btn-block">
+                <div className="card-actions z-50">
+                  <Link href="/Cart" className="btn btn-primary btn-block z-50">
                     View cart
                   </Link>
                 </div>
