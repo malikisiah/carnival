@@ -1,25 +1,6 @@
 import LatestDeals from "./components/LatestDeals";
-import {
-  getFirestore,
-  collection,
-  getDocs,
-  orderBy,
-  query,
-} from "firebase/firestore";
-import { firebaseApp } from "../../../firebase/config";
-
+import { getData } from "../../../utils";
 import FloorProducts from "./FloorProducts";
-
-async function getData(collectionName: string) {
-  const db = getFirestore(firebaseApp);
-  let res: ShopItem[] = [];
-
-  const q = query(collection(db, collectionName), orderBy("name"));
-  const querySnapshot = await getDocs(q);
-  querySnapshot.forEach((doc) => res.push(doc.data() as ShopItem));
-
-  return res;
-}
 
 export default async function Page() {
   const hairItems = await getData("Hair_Items");
