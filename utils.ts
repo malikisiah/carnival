@@ -8,7 +8,7 @@ import {
 
 import { firebaseApp } from "./firebase/config";
 
-export const getData = async (collectionName: string) => {
+export const getItems = async (collectionName: string) => {
   const db = getFirestore(firebaseApp);
   let res: ShopItem[] = [];
 

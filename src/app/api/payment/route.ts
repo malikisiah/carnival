@@ -1,4 +1,3 @@
-
 import Stripe from "stripe";
 import { NextResponse, NextRequest } from "next/server";
 
@@ -9,15 +8,10 @@ export async function POST(request: NextRequest) {
   });
 
   let data = await request.json();
-  let priceId = data.id;
+  let priceIdArray = data.ids;
 
   const session = await stripe.checkout.sessions.create({
-    line_items: [
-      {
-        price: priceId,
-        quantity: 1,
-      },
-    ],
+    line_items: priceIdArray.map((id: string) => ({ price: id, quantity: 1 })),
     mode: "payment",
     success_url: process.env.NEXT_PUBLIC_SUCCESS_URL as string,
     cancel_url: process.env.NEXT_PUBLIC_CANCEL_URL as string,

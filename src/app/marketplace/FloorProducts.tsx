@@ -91,10 +91,10 @@ export default function FloorProducts({
               <div className="mt-4 flex justify-between pb-6">
                 <div>
                   <h3 className="text-sm text-gray-700">
-                    <a href="" className="font-bold">
+                    <div className="font-bold">
                       <span aria-hidden="true" className="absolute inset-0" />
                       {item.name}
-                    </a>
+                    </div>
                   </h3>
                 </div>
                 <p className="text-sm font-medium text-[#f97316]">
@@ -138,6 +138,7 @@ export default function FloorProducts({
                       name: item.name,
                       price: item.price,
                       qty: 1,
+                      image: item.image,
                     })
                   }
                 >
