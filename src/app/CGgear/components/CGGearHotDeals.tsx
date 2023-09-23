@@ -122,6 +122,7 @@ function BlockOne() {
               name: "Test Item",
               price: 29.99,
               qty: 1,
+              image: image,
             })
           }
           style={{

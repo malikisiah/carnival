@@ -60,6 +60,7 @@ const LatestDealsDetails = ({
                   name: name,
                   price: newPrice,
                   qty: 1,
+                  image: image,
                 })
               }
               className="text-white py-2 px-3"
