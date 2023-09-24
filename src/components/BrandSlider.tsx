@@ -286,7 +286,7 @@ function BrandShowcase() {
     },
   ];
 
-  const handleBrandChange = (index) => {
+  const handleBrandChange = (index: React.SetStateAction<number>) => {
     setActiveBrandIndex(index);
   };
 
