@@ -32,13 +32,12 @@ export default function CarouselMarketPlace() {
         setCurrentIndex(slideIndex);
     };
     return (
-
         <div className='w-[75.3rem] h-[30rem] m-auto relative group'>
             <div
                 style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
                 className='w-full h-full bg-center bg-contain duration-1000'
             >
-                <div className="absolute inset-x-[5.8%] bottom-[63%] hidden md:block text-right">
+                <div className="absolute inset-x-[6.9%] bottom-[63%] hidden md:block text-right">
                     <button className="bg-[#F5214E] hover:bg-pink-500 text-white font-bold px-[1rem] text-[20px] p-2 border border-pink-500 rounded">
                         SHOP NOW
                     </button>

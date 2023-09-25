@@ -74,9 +74,9 @@ const Hair = () => {
             
             {/* HAIR */}
             <div className="absolute inset-x-[5.8%] bottom-[63%] hidden md:block text-right">
-                    <button className="bg-[#F5214E] hover:bg-pink-500 text-white font-bold px-[1rem] text-[20px] p-2 border border-pink-500 rounded">
+                    {/* <button className="bg-[#F5214E] hover:bg-pink-500 text-white font-bold px-[1rem] text-[20px] p-2 border border-pink-500 rounded">
                         SHOP NOW
-                    </button>
+                    </button> */}
                 </div>
             {/* <div className="flex-1">
                 <a className="border-solid border-orange-500 bg-[#F7450F] hover:border-white" href="#">

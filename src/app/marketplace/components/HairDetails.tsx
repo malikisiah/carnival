@@ -53,7 +53,7 @@ const HairDetails = ({
               ></path>
             </svg>
 
-            <button
+            {/* <button
               onClick={() =>
                 addToCart({
                   stripe_id: id,
@@ -65,7 +65,7 @@ const HairDetails = ({
               className="text-white py-2 px-3"
             >
               Add to cart
-            </button>
+            </button> */}
           </div>
         </div>
       </div>
