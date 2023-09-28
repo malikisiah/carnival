@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { useState, useContext } from "react";
 import { CartContext } from "@/context/CartProvider";
+
 export default function FloorProducts({
   items,
   header,
@@ -22,12 +23,12 @@ export default function FloorProducts({
   );
 
   return (
-    <div className="bg-[#eaeaea]">
-      <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-4xl lg:px-8">
+    <div className="pt-6">
+      <div className="max-w-[73.5rem] w-auto h-auto w-full m-auto bg-white">
         <div className="tracking-tight flex items-center">
           <h1
             style={{ backgroundColor: theme }}
-            className={`text-2xl font-semibold border border-solid text-white w-48 flex items-center`}
+            className={`text-2xl border border-solid text-white w-48 flex items-center pl-3`}
           >
             {" "}
             {header}{" "}
@@ -46,13 +47,14 @@ export default function FloorProducts({
               />
             </svg>
           </h1>
-          {/* State buttons go here */}
+
+          {/* STATE BUTTONS */}
           <div
             className={`pl-12 items-center border-b border-[${theme}] space-x-6 w-full`}
           >
             <button
               onClick={() => setCurrentPage(1)}
-              className={`hover:opacity-50 border ${
+              className={`bg-white hover:border-orange-500 hover:text-orange-500 px-[0.60rem] text-[13px] p-2 border ${
                 currentPage === 1 ? `border-black` : null
               }`}
             >
@@ -60,7 +62,7 @@ export default function FloorProducts({
             </button>
             <button
               onClick={() => setCurrentPage(2)}
-              className={`hover:opacity-50 border ${
+              className={`bg-white hover:border-orange-500 hover:text-orange-500 px-[0.60rem] text-[13px] p-2 border ${
                 currentPage === 2 ? `border-black` : null
               }`}
             >
@@ -68,7 +70,7 @@ export default function FloorProducts({
             </button>
             <button
               onClick={() => setCurrentPage(3)}
-              className={`hover:opacity-50 border ${
+              className={`bg-white hover:border-orange-500 hover:text-orange-500 px-[0.60rem] text-[13px] p-2 border ${
                 currentPage === 3 ? `border-black` : null
               }`}
             >
@@ -76,41 +78,112 @@ export default function FloorProducts({
             </button>
             <button
               onClick={() => setCurrentPage(4)}
-              className={`hover:opacity-50 border ${
+              className={`bg-white hover:border-orange-500 hover:text-orange-500 px-[0.60rem] text-[13px] p-2 border ${
                 currentPage === 4 ? `border-black` : null
               }`}
             >
               Most Reviews
             </button>
+            <button
+              onClick={() => setCurrentPage(5)}
+              className={`bg-white hover:border-orange-500 hover:text-orange-500 px-[0.60rem] text-[13px] p-2 border ${
+                currentPage === 5 ? `border-black` : null
+              }`}
+            >
+              On Sales
+              </button>
+              <button
+              onClick={() => setCurrentPage(6)}
+              className={`bg-white hover:border-orange-500 hover:text-orange-500 px-[0.60rem] text-[13px] p-2 border ${
+                currentPage === 6 ? `border-black` : null
+              }`}
+            >
+              Trending
+              </button>
+              <button
+              onClick={() => setCurrentPage(7)}
+              className={`bg-white hover:border-orange-500 hover:text-orange-500 px-[0.60rem] text-[13px] p-2 border ${
+                currentPage === 7 ? `border-black` : null
+              }`}
+            >
+              Recommendatation
+              </button>
           </div>
         </div>
+        </div>
+        
+        <div className="flex flex-row justify-center">
+         {/* Category Buttons (vertical) */}
+          <div className="flex flex-col pt-5">
+            <button className="hover:text-orange-500 px-[0.60rem] text-[13px] p-2 text-left">
+              Store #1
+            </button>
+            <button className="hover:text-orange-500 px-[0.60rem] text-[13px] p-2 text-left">
+              Store #2
+            </button>
+            <button className="hover:text-orange-500 px-[0.60rem] text-[13px] p-2 text-left">
+              Accessories
+            </button>
+            <button className="hover:text-orange-500 px-[0.60rem] text-[13px] p-2 text-left">
+              Manicure & Pedicure
+            </button>
+            <button className="hover:text-orange-500 px-[0.60rem] text-[13px] p-2 text-left">
+              Bath & Spa
+            </button>
+            <button className="hover:text-orange-500 px-[0.60rem] text-[13px] p-2 text-left">
+              Hair Care
+            </button>
+            <button className="hover:text-orange-500 px-[0.60rem] text-[13px] p-2 text-left">
+              Girl Sets
+            </button>
+            <button className="hover:text-orange-500 px-[0.60rem] text-[13px] p-2 text-left">
+              ARM
+            </button>
+          </div>
 
-        <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
-          {displayedItems.map((item, idx) => (
+         {/* Big Image (vertical) */}
+          <div className="flex justify-center items-center">
+            <img
+              alt=""
+              className="block h-full w-full object-cover object-center pt-6"
+              src="/FloorProductsMarketPlace/bigHairMarketPlace.jpg" />
+          </div>
+  
+        <div className="mt-6 grid grid-cols-1 gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
+          {displayedItems.map((item, idx) =>
+          (
             <div key={idx} className="group relative">
-              <div className="mt-4 flex justify-between pb-6">
-                <div>
-                  <h3 className="text-sm text-gray-700">
-                    <div className="font-bold">
-                      <span aria-hidden="true" className="absolute inset-0" />
-                      {item.name}
+              <div className="h-auto w-auto group border-2 border-solid border-gray-100 hover:border-orange-500 p-2 bg-white">
+                <div className="relative overflow-hidden"> 
+                  <div className="mt-2 flex justify-between pb-4">
+                
+               {/* NAME */}
+                    <div>
+                      <h3 className="text-sm">
+                        <div className="text-[0.94rem] hover:text-orange-500 leading-none">
+                          <span aria-hidden="true" />
+                            {item.name}
+                        </div>
+                      </h3>
                     </div>
-                  </h3>
-                </div>
-                <p className="text-sm font-medium text-[#f97316]">
-                  {`$${item.price} USD`}
+
+                {/* PRICE */}  
+                <p className="font-bold text-[1.1rem] text-orange-500 leading-none">
+                  {`$${item.price}`}
                 </p>
-              </div>
-              <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:scale-105 transition lg:h-80 border border-gray-300">
+                </div>
+              
+                {/* IMAGE */}
                 <Image
                   src={item.image}
                   alt=""
-                  className="h-full w-full object-cover object-center lg:h-full lg:w-full"
+                  className="h-[16.625rem] w-[11.625rem] object-cover"
                   quality={100}
-                  height={500}
-                  width={500}
+                  height={266}
+                  width={186}
                 />
-              </div>
+
+              {/* Add to cart*/}
               <div
                 className="absolute h-1/5 w-full bg-black/70 flex items-center justify-center 
                 -bottom-10 group-hover:bottom-0 opacity-0 group-hover:opacity-100 duration-300 hover:bg-orange-500 hover:opacity-100"
@@ -129,11 +202,10 @@ export default function FloorProducts({
                     fill="white"
                   ></path>
                 </svg>
-
                 <button
-                  className="text-white py-2 px-3"
                   onClick={() =>
-                    addToCart({
+                    addToCart
+                    ({
                       stripe_id: item.stripe_id,
                       name: item.name,
                       price: item.price,
@@ -141,11 +213,14 @@ export default function FloorProducts({
                       image: item.image,
                     })
                   }
+                  className="text-white py-2 px-3"
                 >
                   Add to cart
                 </button>
               </div>
             </div>
+          </div>
+        </div>
           ))}
         </div>
       </div>
