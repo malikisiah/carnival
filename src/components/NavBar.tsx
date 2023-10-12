@@ -107,20 +107,30 @@ export default function NavBar() {
             </label>
             <div
               tabIndex={0}
-              className="mt-3 card card-compact dropdown-content w-52 bg-base-100 shadow"
+              className="mt-3 card card-compact dropdown-content w-52 bg-base-100 shadow rounded-sm"
             >
               <div className="card-body">
-                <span className="font-bold text-lg">
-                  {cartItems.length} items
-                </span>
-                <span className="text-info">
+                {cartItems.length === 1 ? (
+                  <span className="font-bold text-lg">
+                    {cartItems.length} item
+                  </span>
+                ) : (
+                  <span className="font-bold text-lg">
+                    {cartItems.length} items
+                  </span>
+                )}
+
+                <span className="">
                   Subtotal: $
                   {cartItems.reduce((total, item) => {
                     return total + item.price;
                   }, 0)}
                 </span>
                 <div className="card-actions z-50">
-                  <Link href="/Cart" className="btn btn-primary btn-block z-50">
+                  <Link
+                    href="/Cart"
+                    className="btn btn-block z-50 bg-[#ff4601]  hover:bg-[#ff4501c2]"
+                  >
                     View cart
                   </Link>
                 </div>

@@ -7,6 +7,7 @@ import DealsComponent from "../components/HotDeals";
 import DealsComponentOld from "@/components/HotDealsOldRemove";
 import ItemCollection from "@/components/ItemCollection";
 import Banner from "@/components/Banner";
+import BrandShowcase from "@/components/BrandSlider";
 import BlogCarousel from "@/components/BlogCarousel";
 import Showcase from "@/components/Showcase";
 import {
@@ -59,7 +60,7 @@ export default function Home() {
         subHeadings={["FOR WOMEN", "FOR MEN", "FOR KIDS", "ACCESSORIES"]}
       />
       <Banner img1="/adspc1.jpg" img2="/adspc2.jpg" />
-      <Showcase />
+      <BrandShowcase />
       <BlogCarousel />
     </>
   );

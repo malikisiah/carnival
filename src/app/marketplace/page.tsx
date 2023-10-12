@@ -1,36 +1,29 @@
+"use client";
+import CarouselMarketPlace from "./components/CarouselMarketPlace";
 import LatestDeals from "./components/LatestDeals";
-import {
-  getFirestore,
-  collection,
-  getDocs,
-  orderBy,
-  query,
-} from "firebase/firestore";
-import { firebaseApp } from "../../../firebase/config";
+import { getItems } from "../../../utils";
 
+// import { getData } from "../../../utils";
 import FloorProducts from "./FloorProducts";
 
-async function getData(collectionName: string) {
-  const db = getFirestore(firebaseApp);
-  let res: ShopItem[] = [];
-
-  const q = query(collection(db, collectionName), orderBy("name"));
-  const querySnapshot = await getDocs(q);
-  querySnapshot.forEach((doc) => res.push(doc.data() as ShopItem));
-
-  return res;
-}
-
 export default async function Page() {
-  const hairItems = await getData("Hair_Items");
-  const nailItems = await getData("Nail_Items");
+  const hairItems = await getItems("Hair_Items");
+  const nailItems = await getItems("Nail_Items");
+  const makeupItems = await getItems("Makeup_Items");
+  const eyelashItems = await getItems("Eyelash_Items");
+  const accessoryItems = await getItems("Accessory_Items");
 
   return (
     <>
       <div className="bg-white">
+        <CarouselMarketPlace />
         <LatestDeals />
+
         <FloorProducts header="HAIR" items={hairItems} theme="#ff4601" />
         <FloorProducts header="NAILS" items={nailItems} theme="#00ae31" />
+        <FloorProducts header="MAKE-UP" items={makeupItems} theme="#9683ec" />
+        <FloorProducts header="EYELASHES" items={eyelashItems} theme="#ff2e98"/>
+        <FloorProducts header="ACCESSORIES" items={accessoryItems} theme="#e6bd37"/>
         {/* TODO: ADD floor products for make-up, eyelashes, and accessories */}
       </div>
     </>

@@ -20,6 +20,7 @@ type CartContextType = {
 type CartItem = {
   stripe_id: string;
   name: string;
+  image: string;
   price: number;
   qty: number;
 };

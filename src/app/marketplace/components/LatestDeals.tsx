@@ -1,4 +1,3 @@
-"use client";
 import LatestDealsDetails from "./LatestDealsDetails";
 import { useState } from "react";
 import LatestDealsCountDown from "./LatestDealsCountDown";

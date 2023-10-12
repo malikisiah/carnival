@@ -1,0 +1,11 @@
+/* Add this to your CSS stylesheet or a CSS module */
+.brand-container {
+  display: inline-block;
+  padding: 4px; /* Add some padding for the white gaps */
+  background-color: #eee; /* Light grey background for unselected brands */
+  cursor: pointer;
+}
+
+.brand-container.selected {
+  background-color: #fff; /* White background for the selected brand */
+}

@@ -15,7 +15,7 @@ export default function Checkout() {
 
   const [isLoading, setLoading] = useState(false);
 
-  const checkout = async (id: string) => {
+  const checkout = async (ids: string[]) => {
     setLoading(true);
     const response = await fetch("/api/payment", {
       method: "POST",
@@ -23,7 +23,7 @@ export default function Checkout() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        id,
+        ids,
       }),
     });
 
@@ -34,7 +34,7 @@ export default function Checkout() {
   return (
     <>
       <section>
-        <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
+        <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 min-h-full">
           <div className="mx-auto max-w-3xl">
             <header className="text-center">
               <h1 className="text-xl font-bold text-gray-900 sm:text-3xl">
@@ -48,7 +48,7 @@ export default function Checkout() {
                   return (
                     <li className="flex items-center gap-4" key={idx}>
                       <Image
-                        src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=830&q=80"
+                        src={item.image}
                         alt=""
                         className="h-16 w-16 rounded object-cover"
                         width={300}
@@ -62,7 +62,7 @@ export default function Checkout() {
                         <dl className="mt-0.5 space-y-px text-[10px] text-gray-600">
                           <div>
                             <dt className="inline">Price:</dt>
-                            <dd className="inline">${item.price}</dd>
+                            <dd className="inline">${item.price * item.qty}</dd>
                           </div>
                         </dl>
                       </div>
@@ -77,7 +77,8 @@ export default function Checkout() {
                           <input
                             type="number"
                             min="1"
-                            // value="1"
+                            // value={item.qty}
+                            placeholder="1"
                             id="Line1Qty"
                             className="h-8 w-12 rounded border-gray-200 bg-gray-50 p-0 text-center text-xs text-gray-600 [-moz-appearance:_textfield] focus:outline-none [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none"
                           />
@@ -126,8 +127,10 @@ export default function Checkout() {
                   <div className="flex justify-end"></div>
                   <div className="flex justify-end">
                     <button
-                      onClick={() => checkout(cartItems[0].stripe_id)}
-                      className="block rounded bg-gray-700 px-5 py-3 text-sm text-gray-100 transition hover:bg-gray-600"
+                      onClick={() => {
+                        checkout(cartItems.map((item) => item.stripe_id));
+                      }}
+                      className="block rounded bg-[#ff4601] px-5 py-3 text-sm transition hover:bg-[#ff4501c2]"
                     >
                       Checkout
                     </button>
