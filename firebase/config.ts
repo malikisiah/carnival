@@ -1,6 +1,7 @@
 import * as firebase from "firebase/app";
 import * as auth from "firebase/auth";
 import * as firestore from "firebase/firestore";
+import { connectFirestoreEmulator } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
