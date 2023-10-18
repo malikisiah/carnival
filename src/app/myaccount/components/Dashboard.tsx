@@ -1,7 +1,10 @@
 import { useAuthState } from "react-firebase-hooks/auth";
 import { firebaseAuth } from "../../../../firebase/config";
+type dashContProps = {
+  handleClick: (section: string) => void;
+};
 
-function DashboardContent() {
+function DashboardContent({ handleClick }: dashContProps) {
   const [user] = useAuthState(firebaseAuth);
 
   const handleSignOut = () => {
@@ -37,9 +40,9 @@ function DashboardContent() {
           {/* Add your dashboard content and widgets here */}
           <p style={marginStyle}>
             From your account you can view{" "}
-            <a href="#" style={linkStyle}>
+            <button onClick={() => handleClick("orders")} style={linkStyle}>
               recent orders
-            </a>
+            </button>
             , manage{" "}
             <a href="#" style={linkStyle}>
               shipping and billing addresses

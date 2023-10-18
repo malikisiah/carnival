@@ -37,7 +37,9 @@ export default function LinkBar() {
         />
       </div>
       {/* Render the field based on currentSection */}
-      {currentSection === "dashboard" && <Dashboard />}
+      {currentSection === "dashboard" && (
+        <Dashboard handleClick={handleTextLineClick} />
+      )}
       {currentSection === "orders" && <Orders />}
       {currentSection === "downloads" && <Downloads />}
       {currentSection === "addresses" && <Addresses />}
@@ -96,10 +98,14 @@ function Links({ sections, currentSection, handleTextLineClick }: LinksProps) {
     </div>
   );
 }
-function Dashboard() {
+
+type dashProps = {
+  handleClick: (section: string) => void;
+};
+function Dashboard({ handleClick }: dashProps) {
   return (
     <div className="flex min-h-screen">
-      <DashboardContent />
+      <DashboardContent handleClick={handleClick} />
     </div>
   );
 }
