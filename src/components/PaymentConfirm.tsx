@@ -1,4 +1,22 @@
+"use client";
+import { useContext, useEffect } from "react";
+import { CartContext } from "@/context/CartProvider";
+import { saveItem } from "../../utils";
+
 export default function PaymentConfirm() {
+  const context = useContext(CartContext);
+  if (!context) {
+    throw new Error("No Context");
+  }
+  const { cartItems, removeFromCart } = context;
+
+  useEffect(() => {
+    cartItems.forEach((value, index) => {
+      saveItem("abc", value);
+      removeFromCart(index);
+    });
+  }, [cartItems, removeFromCart]);
+
   return (
     <div className="grid h-screen px-4 bg-white place-content-center">
       <div className="text-center">

@@ -1,6 +1,6 @@
 import PaymentConfirm from "@/components/PaymentConfirm";
 
-export default function Page() {
+export default async function Page() {
   return (
     <>
       <PaymentConfirm />
