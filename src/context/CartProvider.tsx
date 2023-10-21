@@ -5,7 +5,7 @@ import React, { createContext, useState, useEffect } from "react";
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
 const CartProvider = ({ children }: any) => {
-  const [cartItems, setCartItems] = useState<CartItem[]>([]);
+  const [cartItems, setCartItems] = useState<ShopItem[]>([]);
 
   useEffect(() => {
     const initialCartItems = JSON.parse(
@@ -14,7 +14,7 @@ const CartProvider = ({ children }: any) => {
     setCartItems(initialCartItems);
   }, []);
 
-  const addToCart = (item: CartItem) => {
+  const addToCart = (item: ShopItem) => {
     const updatedCartItems = [...cartItems, item];
     setCartItems(updatedCartItems);
     localStorage.setItem("cartItems", JSON.stringify(updatedCartItems));

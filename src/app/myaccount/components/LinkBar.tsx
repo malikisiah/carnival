@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import DashboardContent from "./Dashboard";
 import AddressContent from "./Addresses";
 import AccountDetailsContent from "./AccountDetails";
+import PurchaseHistory from "./PurchaseHistory";
 
 export default function LinkBar() {
   // Define the available sections
@@ -40,7 +41,7 @@ export default function LinkBar() {
       {currentSection === "dashboard" && (
         <Dashboard handleClick={handleTextLineClick} />
       )}
-      {currentSection === "orders" && <Orders />}
+      {currentSection === "orders" && <PurchaseHistory />}
       {currentSection === "downloads" && <Downloads />}
       {currentSection === "addresses" && <Addresses />}
       {currentSection === "accountDetails" && <AccountDetails />}
@@ -108,10 +109,6 @@ function Dashboard({ handleClick }: dashProps) {
       <DashboardContent handleClick={handleClick} />
     </div>
   );
-}
-
-function Orders() {
-  return <div>Orders Component</div>;
 }
 
 function Downloads() {

@@ -2,7 +2,9 @@ type ShopItem = {
   image: string;
   name: string;
   price: number;
-  stripe_id: string;
+  stripe_id?: string;
+  purchaseDate?: string;
+  qty?: number;
 };
 
 type FloorProductsProps = {
@@ -15,12 +17,4 @@ type CartContextType = {
   cartItems: CartItem[];
   addToCart: (item: CartItem) => void;
   removeFromCart: (idx: number) => void;
-};
-
-type CartItem = {
-  stripe_id: string;
-  name: string;
-  image: string;
-  price: number;
-  qty: number;
 };

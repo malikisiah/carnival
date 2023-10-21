@@ -1,7 +1,7 @@
 "use client";
 import { useContext, useEffect } from "react";
 import { CartContext } from "@/context/CartProvider";
-import { saveItem } from "../../utils";
+import { saveItem } from "../lib/utils";
 
 export default function PaymentConfirm() {
   const context = useContext(CartContext);
@@ -12,7 +12,7 @@ export default function PaymentConfirm() {
 
   useEffect(() => {
     cartItems.forEach((value, index) => {
-      saveItem("abc", value);
+      saveItem(value);
       removeFromCart(index);
     });
   }, [cartItems, removeFromCart]);
