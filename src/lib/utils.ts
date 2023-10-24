@@ -35,6 +35,12 @@ const saveItem = async (item: ShopItem) => {
       const userRef = doc(db, "users", uid);
       const userSnap = await getDoc(userRef);
 
+      const today = new Date();
+
+      item.purchaseDate = `${
+        today.getMonth() + 1
+      }-${today.getDate()}-${today.getFullYear()}`;
+
       if (userSnap.exists()) {
         await updateDoc(userRef, {
           orderHistory: arrayUnion(item),
