@@ -30,17 +30,21 @@ export default function PurchaseHistory() {
 
   return (
     <>
-      <div className="grid grid-cols-1 gap-4 lg:grid-cols-6 lg:gap-8">
-        {orderHistory.map((value, index) => {
-          return (
-            <ProductCard
-              key={index}
-              image={value.image}
-              price={value.price}
-              name={value.name}
-            />
-          );
-        })}
+      <div className="ml-80">
+        <h1 className="text-center font-bold text-2xl pb-8">My Orders</h1>
+        <div className="grid grid-cols-2 gap-16">
+          {orderHistory.map((value, index) => {
+            return (
+              <ProductCard
+                key={index}
+                image={value.image}
+                price={value.price}
+                name={value.name}
+                purchaseDate="10-22-2023"
+              />
+            );
+          })}
+        </div>
       </div>
     </>
   );
