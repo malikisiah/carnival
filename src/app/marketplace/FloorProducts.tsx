@@ -91,23 +91,23 @@ export default function FloorProducts({
               }`}
             >
               On Sales
-              </button>
-              <button
+            </button>
+            <button
               onClick={() => setCurrentPage(6)}
               className={`bg-white hover:border-orange-500 hover:text-orange-500 px-[0.60rem] text-[13px] p-2 border ${
                 currentPage === 6 ? `border-black` : null
               }`}
             >
               Trending
-              </button>
-              <button
+            </button>
+            <button
               onClick={() => setCurrentPage(7)}
               className={`bg-white hover:border-orange-500 hover:text-orange-500 px-[0.60rem] text-[13px] p-2 border ${
                 currentPage === 7 ? `border-black` : null
               }`}
             >
               Recommendatation
-              </button>
+            </button>
           </div>
         </div>
         </div>

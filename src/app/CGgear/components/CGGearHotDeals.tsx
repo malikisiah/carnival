@@ -4,6 +4,7 @@ import { CartContext } from "@/context/CartProvider";
 
 export default function CGGearHotdeals() {
   return (
+    <div className="max-w-[73.5rem] h-auto w-full m-auto flex justify-end items-center py-4">
     <div
       style={{
         width: "300px",
@@ -15,6 +16,7 @@ export default function CGGearHotdeals() {
       <Header />
       <BlockOne />
       {/* Other content in CGGearHotdeals */}
+    </div>
     </div>
   );
 }
