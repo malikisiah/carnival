@@ -30,9 +30,9 @@ export default function PurchaseHistory() {
 
   return (
     <>
-      <div className="ml-80">
+      <div className="">
         <h1 className="text-center font-bold text-2xl pb-8">My Orders</h1>
-        <div className="grid grid-cols-2 gap-16">
+        <div className="grid grid-cols-1 gap-16 w-1/3 mx-auto">
           {orderHistory
             ? orderHistory.map((value, index) => {
                 return (
@@ -42,6 +42,7 @@ export default function PurchaseHistory() {
                     price={value.price}
                     name={value.name}
                     purchaseDate={value.purchaseDate}
+                    stripe_id={value.stripe_id}
                   />
                 );
               })

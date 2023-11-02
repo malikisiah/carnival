@@ -18,30 +18,26 @@ export default function Navigation() {
           <div className="dropdown dropdown-hover z-50">
             {signedIn ? (
               <>
-                
                 <div className="inline-flex hover:text-sky-500 px-3">
-                  <Link href="/myaccount">My Account</Link>
+                  <span>My Account</span>
                 </div>
                 <ul
-              tabIndex={0}
-              className="dropdown-content menu p-2 shadow bg-white box w-52"
-            >
-              <li>
-                <a>Wishlist</a>
-              </li>
-              <li>
-                <a>My Account</a>
-              </li>
-              <li>
-                <a>Compare</a>
-              </li>
-              <li>
-                <a>Checkout</a>
-              </li>
-              <li>
-                  <Link href="/myaccount">My Account</Link>
-              </li>
-            </ul>
+                  tabIndex={0}
+                  className="dropdown-content menu p-2 shadow bg-white box w-52"
+                >
+                  <li>
+                    <a>Wishlist</a>
+                  </li>
+                  <li>
+                    <Link href="/myaccount">My Account</Link>
+                  </li>
+                  <li>
+                    <a>Compare</a>
+                  </li>
+                  <li>
+                    <Link href="/Cart">Checkout</Link>
+                  </li>
+                </ul>
               </>
             ) : (
               <label tabIndex={0} className="hover:text-sky-500 pr-3 ">
@@ -61,12 +57,13 @@ export default function Navigation() {
           <div className="inline-flex hover:text-sky-500 px-3">
             <Link href="/">Support</Link>
           </div>
-          
           {signedIn && (
-            <div onClick={handleSignOut} className="inline-flex hover:text-sky-500 px-3 cursor-pointer">
-              |
-              Sign Out
-              </div>
+            <div
+              onClick={handleSignOut}
+              className="inline-flex hover:text-sky-500 px-3 cursor-pointer"
+            >
+              | Sign Out
+            </div>
           )}
         </div>
       </div>
