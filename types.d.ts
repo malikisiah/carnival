@@ -18,3 +18,12 @@ type CartContextType = {
   addToCart: (item: CartItem) => void;
   removeFromCart: (idx: number) => void;
 };
+
+type userAdmin = {
+  displayName: string | null;
+  email: string;
+  photo: string | null;
+  role: string;
+  adminStatus: boolean;
+  uid: string;
+};

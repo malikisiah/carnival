@@ -1,9 +1,12 @@
 import Users from "../users";
+import { getAdmins } from "@/lib/utils";
 
-export default function AdminPage() {
+export default async function AdminPage() {
+  const data = await getAdmins();
+  console.log(data);
   return (
     <>
-      <Users />
+      <Users users={data} />
     </>
   );
 }

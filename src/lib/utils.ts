@@ -8,6 +8,8 @@ import {
   getDoc,
   doc,
   arrayUnion,
+  where,
+  setDoc,
 } from "firebase/firestore";
 
 import { firebaseApp } from "../../firebase/config";
@@ -75,4 +77,30 @@ const getPurchaseHistory = async () => {
   });
 };
 
-export { getItems, saveItem, getPurchaseHistory };
+const getAdmins = async () => {
+  let res: userAdmin[] = [];
+
+  const usersRef = collection(db, "users");
+  const q = query(usersRef, where("role", "==", "developer"));
+  const querySnapshot = await getDocs(q);
+  querySnapshot.forEach((doc) => {
+    const data = doc.data();
+    res.push({
+      displayName: data.displayName,
+      email: data.email,
+      photo: data.photoURL,
+      role: data.role,
+      adminStatus: data.admin,
+      uid: data.uid,
+    });
+  });
+
+  return res;
+};
+
+const addRemoveAdmin = async (uid: string, status: boolean) => {
+  const userRef = doc(db, "users", uid);
+  await updateDoc(userRef, { admin: !status });
+};
+
+export { getItems, saveItem, getPurchaseHistory, getAdmins, addRemoveAdmin };
