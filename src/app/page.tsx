@@ -21,7 +21,6 @@ import Carousel from "@/components/carousel";
 
 export default function Home() {
   const [user, loading, error] = useAuthState(firebaseAuth);
-  console.log("Loading:", loading, "|", "Current user:", user);
 
   return (
     <>

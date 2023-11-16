@@ -10,7 +10,6 @@ type usersProp = {
 export default function Users({ users }: usersProp) {
   const [members, setMembers] = useState(users);
   const [loading, setLoading] = useState(false);
-  console.log(members);
   return (
     <div className="max-w-screen-xl mx-auto px-4 md:px-8 min-h-screen mt-16">
       <div className="max-w-lg">

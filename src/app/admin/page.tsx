@@ -16,7 +16,7 @@ export default function AdminPage() {
             <Link className="link link-info" href="/admin/users">
               Manage users
             </Link>
-            <Link className="link link-info" href="/admin/users">
+            <Link className="link link-info" href="/admin/items">
               Manage items
             </Link>
           </div>
