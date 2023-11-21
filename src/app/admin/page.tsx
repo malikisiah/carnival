@@ -5,17 +5,17 @@ export default function AdminPage() {
       <div className="hero-content text-center">
         <div className="max-w-lg mb-96">
           <h1 className="text-3xl text-black mb-5">Admin Page</h1>
-          <p className="mb-5">
+          {/* <p className="mb-5">
             {" "}
             Manage team members, manage users, manage items.
-          </p>
+          </p> */}
           <div className="space-x-16">
             <Link className="link link-info" href="/admin/users">
               Manage employees
             </Link>
-            <Link className="link link-info" href="/admin/users">
+            {/* <Link className="link link-info" href="/admin/users">
               Manage users
-            </Link>
+            </Link> */}
             <Link className="link link-info" href="/admin/items">
               Manage items
             </Link>

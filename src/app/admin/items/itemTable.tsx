@@ -1,4 +1,6 @@
 "use client";
+import SideBarButton from "@/components/sideBarButton";
+import Image from "next/image";
 import { useState } from "react";
 
 type ItemTableProps = {
@@ -67,7 +69,7 @@ export default function ItemTable({
               key={idx}
               className={`py-2 border-b-2 ${
                 selectedItem == idx
-                  ? "border-indigo-600 text-indigo-600"
+                  ? "border-[#ff4601] text-[#ff4601]"
                   : "border-white text-gray-500"
               }`}
             >
@@ -75,7 +77,7 @@ export default function ItemTable({
                 role="tab"
                 aria-selected={selectedItem == idx ? true : false}
                 aria-controls={`tabpanel-${idx + 1}`}
-                className="py-2.5 px-4 rounded-lg duration-150 hover:text-indigo-600 hover:bg-gray-50 active:bg-gray-100 font-medium"
+                className="py-2.5 px-4 rounded-lg duration-150 hover:text-[#ff4601] hover:bg-gray-50 active:bg-gray-100 font-medium"
                 onClick={() => setSelectedItem(idx)}
               >
                 {item.label}
@@ -90,19 +92,34 @@ export default function ItemTable({
                 {tableItems[selectedItem].title}
               </th>
               <th className="py-4 pr-6">Price</th>
-              <th className="py-4 pr-6">Impression</th>
+              <th className="py-4 pl-6">Edit</th>
             </tr>
           </thead>
           <tbody className="text-gray-600 divide-y">
             {tableItems[selectedItem].items.map((item, idx) => (
               <tr key={idx}>
-                <td className="pr-6 py-4 whitespace-nowrap">{item.name}</td>
-                <td className="pr-6 py-4 whitespace-nowrap text-indigo-600">
+                <td className="pr-6 py-4 whitespace-nowrap">
+                  <div className="flex align-middle items-center">
+                    <div className="avatar pr-4">
+                      <div className="w-12 rounded-xl">
+                        <Image
+                          alt=""
+                          width={500}
+                          height={500}
+                          quality={100}
+                          src={item.image}
+                        />
+                      </div>
+                    </div>
+                    {item.name}
+                  </div>
+                </td>
+                <td className="pr-6 py-4 whitespace-nowrap text-[#ff4601]">
                   ${item.price}
                 </td>
                 <td className="pr-6 py-4 whitespace-nowrap">
                   <span className="py-2 px-3 rounded-full font-semibold text-xs">
-                    {item.name}
+                    <SideBarButton />
                   </span>
                 </td>
               </tr>

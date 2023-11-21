@@ -20,9 +20,9 @@ export default function Users({ users }: usersProp) {
           Control which employees will have administrative access
         </p>
       </div>
-      <div className="mt-12 shadow-sm border rounded-lg overflow-x-auto">
+      <div className="mt-12 shadow-md border rounded-lg overflow-x-auto">
         <table className="w-full table-auto text-sm text-left">
-          <thead className="bg-gray-50 text-gray-600 font-medium border-b">
+          <thead className="bg-[#ff4501] text-black font-medium border-b">
             <tr>
               <th className="py-3 px-6">Username</th>
               <th className="py-3 px-6">Position</th>

@@ -57,6 +57,10 @@ export default function Navigation() {
           <div className="inline-flex hover:text-sky-500 px-3">
             <Link href="/">Support</Link>
           </div>
+          |
+          <div className="inline-flex hover:text-sky-500 px-3">
+            <Link href="/admin">Admin</Link>
+          </div>
           {signedIn && (
             <div
               onClick={handleSignOut}
