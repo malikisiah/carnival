@@ -103,4 +103,25 @@ const addRemoveAdmin = async (uid: string, status: boolean) => {
   await updateDoc(userRef, { admin: !status });
 };
 
-export { getItems, saveItem, getPurchaseHistory, getAdmins, addRemoveAdmin };
+const updateItems = async (
+  collection: string,
+  stripeId: string,
+  name: string,
+  price: number
+) => {
+  const itemRef = doc(db, collection, stripeId);
+
+  await updateDoc(itemRef, {
+    name: name,
+    price: price,
+  });
+};
+
+export {
+  getItems,
+  saveItem,
+  getPurchaseHistory,
+  getAdmins,
+  addRemoveAdmin,
+  updateItems,
+};

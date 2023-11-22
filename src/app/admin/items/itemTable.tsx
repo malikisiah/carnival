@@ -22,26 +22,31 @@ export default function ItemTable({
     {
       label: "Accessories",
       title: "Accessory Shop Items",
+      collection: "Accessory_Items",
       items: accessories,
     },
     {
       label: "Hair",
       title: "Hair Shop Items",
+      collection: "Hair_Items",
       items: hair,
     },
     {
       label: "Make-Up",
       title: "Make-Up Shop Items",
+      collection: "Makeup_Items",
       items: makeup,
     },
     {
       label: "Eyelashes",
       title: "Eyelash Shop Items",
+      collection: "Eyelash_Items",
       items: eyelashes,
     },
     {
       label: "Nails",
       title: "Nail Shop Items",
+      collection: "Nail_Items",
       items: nails,
     },
   ];
@@ -119,7 +124,14 @@ export default function ItemTable({
                 </td>
                 <td className="pr-6 py-4 whitespace-nowrap">
                   <span className="py-2 px-3 rounded-full font-semibold text-xs">
-                    <SideBarButton />
+                    <SideBarButton
+                      item={{
+                        name: item.name,
+                        price: item.price,
+                        image: item.image,
+                      }}
+                      collection={tableItems[selectedItem].collection}
+                    />
                   </span>
                 </td>
               </tr>
